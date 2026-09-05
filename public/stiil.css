@@ -284,6 +284,11 @@ main > section { scroll-margin-top: calc(var(--pais-h) + 10px); }
 .vordlus-enne {
   position: absolute;
   inset: 0;
+  /* Oma umardus, mitte vanema overflow: hidden. WebKitis ei loika vanema
+     border-radius alati last, kellel on oma clip-path, ja siis paistab
+     enne-pool kaarja kaardi ulanurkadest nelinurkse kastina valja. */
+  border-radius: inherit;
+  overflow: hidden;
   clip-path: inset(0 calc(100% - var(--pos)) 0 0);
 }
 .vordlus-enne img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -440,7 +445,12 @@ main > section { scroll-margin-top: calc(var(--pais-h) + 10px); }
 }
 .loend strong { color: var(--ink); }
 .meist-pilt { margin: 0; }
-.meist-pilt img { display: block; width: 100%; box-shadow: var(--vari); }
+.meist-pilt img {
+  display: block;
+  width: 100%;
+  border-radius: var(--kaar);
+  box-shadow: var(--vari);
+}
 .meist-pilt figcaption {
   margin-top: 12px;
   font-size: .9rem;
