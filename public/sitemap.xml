@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://kadikoristab.ee/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://kadikoristab.ee/pildid/vannitoa-porand-parast.webp</image:loc>
+      <image:title>Vannitoa põrand pärast koristust</image:title>
+      <image:caption>Plaaditud vannitoa põrand ja põrandatrapp pärast Kadi Koristab OÜ koristust.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kadikoristab.ee/pildid/wc-ruum-parast.webp</image:loc>
+      <image:title>WC-ruum pärast koristust</image:title>
+      <image:caption>WC-pott ja plaaditud põrand pärast ehitusjärgset koristust.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kadikoristab.ee/pildid/dusinurk-parast.webp</image:loc>
+      <image:title>Dušinurk pärast puhastust</image:title>
+      <image:caption>Klaasist dušinurk ja pesumasin pärast katlakivi eemaldamist.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kadikoristab.ee/pildid/ovaalne-aken-parast.webp</image:loc>
+      <image:title>Ovaalne aken pärast pesu</image:title>
+      <image:caption>Ovaalne aken ja lai aknalaud pärast akende ja klaaspindade pesu.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kadikoristab.ee/pildid/kulmkapp-parast.webp</image:loc>
+      <image:title>Külmkapp pärast puhastust</image:title>
+      <image:caption>Külmkapi riiulid ja sahtlid pärast seestpoolt puhastamist.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kadikoristab.ee/pildid/koogi-toopind-parast.webp</image:loc>
+      <image:title>Köögi tööpind pärast puhastust</image:title>
+      <image:caption>Kivist köögi tööpind pärast kuivanud plekkide eemaldamist.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kadikoristab.ee/pildid/aken-vaade-parast.webp</image:loc>
+      <image:title>Aken pärast pesu</image:title>
+      <image:caption>Puhtaks pestud aknaklaas, mille tagant paistab selge vaade.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://kadikoristab.ee/pildid/raamaturiiul.webp</image:loc>
+      <image:title>Puhastatud puidust raamaturiiul</image:title>
+      <image:caption>Puidust raamaturiiul pärast puitmööbli puhastamist.</image:caption>
+    </image:image>
+  </url>
+</urlset>
