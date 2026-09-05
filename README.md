@@ -111,3 +111,17 @@ vaja ja küpsiseteavitust see kaasa ei too.
   oli mõlemal korral samas kohas, lähevad kattuvusnumbrid üles ja rohkem
   paare kõlbab liuguriks. Laadi saab vahetada `PAARID` tabelis `pildid.py`
   sees, väärtus "liugur" või "paar".
+- Liuguri lohistuse teeb `skript.js` ise, pointer-sündmustega, ja
+  `<input type="range">` on `pointer-events: none`. Põhjus: puuteekraanil
+  ei hüppa natiivne range sinna, kuhu vajutad, vaid nõuab täpselt pöidla
+  tabamist, ja meie pöial on läbipaistev. Telefonis jäi liugur seetõttu
+  päris seisma. Input on alles klaviatuuri ja ekraanilugeja jaoks ning
+  skript hoiab tema `value` sünkroonis, nii et nooleklahvid töötavad.
+- Puutel ei haarata žesti kohe. Esimese viie piksli järel vaadatakse, kumb
+  suund võidab: külili liigutus võtab lohistuse, püstine jäetakse lehele
+  kerimiseks. Ilma selleta oleks pildi kohalt kerimine kinni jäänud.
+  Konteineri `touch-action: pan-y` hoiab ära, et brauser külili keriks.
+- Nähtav käepide `.vordlus-kaepide` on eraldi element, mitte natiivne
+  `::-webkit-slider-thumb`. WebKitis jääb pöial täiskõrgusega raja
+  ülaserva kinni ega tsentreeru püsti. Käepide järgib sama `--pos`
+  muutujat mis jaotusjoon.
