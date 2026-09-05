@@ -274,7 +274,11 @@ main > section { scroll-margin-top: calc(var(--pais-h) + 10px); }
   background: var(--tint-2);
   box-shadow: var(--vari);
   touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
 }
+.vordlus.lohistab { cursor: grabbing; }
 .vordlus-kaar { border-radius: 50% 50% 16px 16px / 24% 24% 3% 3%; }
 .vordlus-parast { display: block; width: 100%; height: auto; }
 .vordlus-enne {
@@ -310,9 +314,10 @@ main > section { scroll-margin-top: calc(var(--pais-h) + 10px); }
   border: 0;
   appearance: none;
   -webkit-appearance: none;
-  cursor: grab;
+  /* Lohistuse teeb skript.js. Input on siin klaviatuuri ja ekraanilugeja
+     parast, puuted ja klikid peavad temast labi kasti endani joudma. */
+  pointer-events: none;
 }
-.vordlus-liugur:active { cursor: grabbing; }
 .vordlus-liugur::-webkit-slider-runnable-track { background: transparent; height: 100%; }
 .vordlus-liugur::-moz-range-track { background: transparent; height: 100%; }
 /* Natiivne poial on labipaistev. Ta jaab WebKitis raja ulaserva kinni ega
@@ -325,17 +330,13 @@ main > section { scroll-margin-top: calc(var(--pais-h) + 10px); }
   height: 52px;
   background: transparent;
   border: 0;
-  cursor: grab;
 }
-.vordlus-liugur:active::-webkit-slider-thumb { cursor: grabbing; }
 .vordlus-liugur::-moz-range-thumb {
   width: 52px;
   height: 52px;
   background: transparent;
   border: 0;
-  cursor: grab;
 }
-.vordlus-liugur:active::-moz-range-thumb { cursor: grabbing; }
 .vordlus-liugur:focus-visible { outline-offset: -4px; }
 
 /* Nahtav kaepide: kaemark, alati pildi pusti keskel. */
@@ -353,7 +354,7 @@ main > section { scroll-margin-top: calc(var(--pais-h) + 10px); }
   box-shadow: 0 3px 12px rgba(27, 42, 33, .38);
   pointer-events: none;
 }
-.vordlus-liugur:hover ~ .vordlus-kaepide { background-color: var(--roheline-tume); }
+.vordlus:hover .vordlus-kaepide { background-color: var(--roheline-tume); }
 .vordlus-liugur:focus-visible ~ .vordlus-kaepide {
   box-shadow: 0 0 0 4px rgba(47, 107, 79, .55), 0 3px 12px rgba(27, 42, 33, .38);
 }
