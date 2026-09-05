@@ -112,7 +112,14 @@ vaja ja küpsiseteavitust see kaasa ei too.
   paare kõlbab liuguriks. Laadi saab vahetada `PAARID` tabelis `pildid.py`
   sees, väärtus "liugur" või "paar".
 - Liuguri lohistuse teeb `skript.js` ise, pointer-sündmustega, ja
-  `<input type="range">` on `pointer-events: none`. Põhjus: puuteekraanil
+  `<input type="range">` on `pointer-events: none` ning `opacity: 0`.
+  Ainult läbipaistvast taustast ei piisanud: natiivne pöial on 52 pikslit
+  lai kast, mis istub raja ülaservas ja liigub koos jaotusjoonega, ning osa
+  brausereid joonistab talle vaikimisi nähtava serva. Lehel paistis see
+  kummalise kastina joone ülaotsas. Fookust näitab nähtav käepide, mis saab
+  fookuses rohelise rõnga. Seal on `:focus`, mitte `:focus-visible`, sest
+  input ei ole hiirega fokuseeritav ja iga fookus tuleb niikuinii
+  klaviatuurilt. Põhjus: puuteekraanil
   ei hüppa natiivne range sinna, kuhu vajutad, vaid nõuab täpselt pöidla
   tabamist, ja meie pöial on läbipaistev. Telefonis jäi liugur seetõttu
   päris seisma. Input on alles klaviatuuri ja ekraanilugeja jaoks ning

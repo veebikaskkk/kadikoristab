@@ -307,6 +307,14 @@ main > section { scroll-margin-top: calc(var(--pais-h) + 10px); }
 }
 .vordlus .paar-silt { z-index: 3; }
 .vordlus .paar-silt-parast { left: auto; right: 10px; }
+/* Input on lehel ainult klaviatuuri ja ekraanilugeja parast. Lohistuse
+   teeb skript.js, seega on siin nii pointer-events kui ka opacity maas.
+
+   opacity: 0 on tahtis. Ainult labipaistvast taustast ei piisa: natiivne
+   poial on 52 pikslit lai kast, mis istub raja ulaservas ja liigub koos
+   joonega, ning osa brausereid joonistab talle vaikimisi nahtava serva.
+   Lehel paistis see kummalise kastina joone ulaotsas. Fookust naitab
+   nahtav kaepide, mis saab fookuses rohelise rongi. */
 .vordlus-liugur {
   position: absolute;
   z-index: 2;
@@ -319,30 +327,9 @@ main > section { scroll-margin-top: calc(var(--pais-h) + 10px); }
   border: 0;
   appearance: none;
   -webkit-appearance: none;
-  /* Lohistuse teeb skript.js. Input on siin klaviatuuri ja ekraanilugeja
-     parast, puuted ja klikid peavad temast labi kasti endani joudma. */
+  opacity: 0;
   pointer-events: none;
 }
-.vordlus-liugur::-webkit-slider-runnable-track { background: transparent; height: 100%; }
-.vordlus-liugur::-moz-range-track { background: transparent; height: 100%; }
-/* Natiivne poial on labipaistev. Ta jaab WebKitis raja ulaserva kinni ega
-   tsentreeru pusti, seepart on nahtav kaepide eraldi element, mida --pos
-   liigutab. Poial jaab siiski kohale: tema kylge kaib hiir ja klaviatuur. */
-.vordlus-liugur::-webkit-slider-thumb {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 52px;
-  height: 52px;
-  background: transparent;
-  border: 0;
-}
-.vordlus-liugur::-moz-range-thumb {
-  width: 52px;
-  height: 52px;
-  background: transparent;
-  border: 0;
-}
-.vordlus-liugur:focus-visible { outline-offset: -4px; }
 
 /* Nahtav kaepide: kaemark, alati pildi pusti keskel. */
 .vordlus-kaepide {
@@ -360,7 +347,7 @@ main > section { scroll-margin-top: calc(var(--pais-h) + 10px); }
   pointer-events: none;
 }
 .vordlus:hover .vordlus-kaepide { background-color: var(--roheline-tume); }
-.vordlus-liugur:focus-visible ~ .vordlus-kaepide {
+.vordlus-liugur:focus ~ .vordlus-kaepide {
   box-shadow: 0 0 0 4px rgba(47, 107, 79, .55), 0 3px 12px rgba(27, 42, 33, .38);
 }
 
